@@ -12,18 +12,16 @@ function setup() {
   canvas.setAttribute('ontouchcancel', 'touchEnd(event)');
 }
 
-darkColors = ['#c0392b', '#16a085', '#2980b9', '#8e44ad', '#2c3e50', '#f39c12', '#d35400', '#bdc3c7', '#7f8c8d', '#27ae60']
+darkColors = ['#c0392b', '#16a085', '#2980b9', '#8e44ad', '#2c3e50', '#d35400', '#7f8c8d', '#27ae60', '#f39c12']
 var baseWidth = 150;
 var limit = 1000;
 var outerWidth = 20;
-
-
 
 function draw() {
   background('#bdc3c7');
 
   if (clicked) {
-    strokeWeight(outerWidth * 2)
+    strokeWeight(outerWidth)
     fill('#00000000')
     textSize(32);
     stroke(darkColors[2])
@@ -33,13 +31,13 @@ function draw() {
 
     stroke('#c0392b')
     strokeWeight(10)
-    fill('#bdc3c7');
+    fill('#00000000')
     ellipse(circle.clientX, circle.clientY, baseWidth, baseWidth)
   }
 
   for (i in touched) {
     if (touched[i] == true) {
-      strokeWeight(outerWidth * 2)
+      strokeWeight(outerWidth)
       fill('#00000000')
       textSize(32);
       stroke(darkColors[parseInt(i) + 1])
@@ -48,7 +46,7 @@ function draw() {
       strokeWeight(2)
 
       strokeWeight(10)
-      fill('#bdc3c7');
+      fill('#00000000')
       stroke(darkColors[parseInt(i)])
       ellipse(tcircle[i].val.clientX, tcircle[i].val.clientY, baseWidth, baseWidth)
 
